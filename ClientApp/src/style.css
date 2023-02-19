@@ -12,6 +12,16 @@ div {
     flex-direction: row-reverse;
 }
 
+.mainImg_1 {
+    transform: translateY(-70px);
+    scale:85%;
+}
+
+.mainImg_2 {
+    scale:120%;
+    transform: translate(25px, 35px);
+}
+
 .Logo {
     font-family: BalooBhaijaan;
     display: flex;
@@ -35,9 +45,10 @@ div {
     color: white;
     background-color: #8a7878;
     font-family: BalooBhaijaan;
-    height: 65px;
+    height: 45px;
     font-size: 25px;
     border-radius: 25px;
+    transform: translateY(-35px);
 }
 
 .Explore{
@@ -52,6 +63,7 @@ div {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
+    transform: translate(0, -500px);
 }
 
 .ExploreButton{
@@ -71,8 +83,29 @@ div {
 .Category-Tile {
     font-family: BalooBhaijaan;
     text-align: 'center';
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
+    background-color: #DC8900;
+    border-radius: 25px;
+    margin: 15px;
+}
+
+.Category-Title {
+    scale: 2;
+    transform: translateY(30px);
+}
+
+.Category-Thumb {
+    scale: 2;
+}
+
+.Business-List-Container {
+    display: block;
+}
+
+.Business-List-Title {
+margin-left: 50px;
+
 }
 
 .BusinessCard {
@@ -80,31 +113,76 @@ div {
     padding: 20px;
     width: 500;
     height: 50%;
+    background-color: rgb(122, 106, 106);
+    border-radius: 25px;
+    margin-bottom: 25px;
 }
 .BusinessCard-Meta {
     padding: 20px;
 }
-.Profile-Card{
 
+.Business-Thumb{
+    border-radius: 25px;
+}
+
+.Business-Card-Name {
+padding-left: -25px;
+font-size: 25px;
+color: whitesmoke;
+}
+
+.Business-Card-Tier {
+    padding-left: 265px;
+    font-size: 30px;
+    color: rgb(168, 163, 163);
+}
+
+.Profile-Card{
+    background-color: whitesmoke;
 }
 .Profile-Banner{
-
+    width: 100%;
 }
 .Profile-Name{
-
+    font-size:30px;
 }
 .Profile-Address{
-
+    margin-left: 25px;
+    font-size: 20px;
 }
 .Profile-Tier{
-
+    transform: translate(375px, -75px);
+    font-size: 25px;
+    color: rgb(121, 114, 114);
 }
 .Profile-Hours{
-
+    font-size: 18px;
+    transform: translateX(45px);
 }
-.Profile-Header {
 
+.Claim-Header {
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
-.Profile-Paragraph {
 
+.Claim-Text {
+    color:rgb(121, 114, 114);
+    font-style: italic;
+    transform: translate(110px, 45px);
+}
+
+.Claim-Button {
+    font-family: BalooBhaijaan;
+    background-color: rgb(184, 28, 28);
+    color: whitesmoke;
+    font-style: oblique;
+    scale:2;
+    transform: translate(-40px, 45px);
+}
+
+.return-button {
+    border-radius: 25px;
+    background-color: #DC8900;
+    color:antiquewhite; 
 }

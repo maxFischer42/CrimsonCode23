@@ -2,7 +2,6 @@ import '../style.css';
 import React, { Component } from 'react';
 import { Button, Input } from 'antd';
 import { Link } from 'react-router-dom';
-
 import { Card } from 'antd';
 const { Meta } = Card;
 
@@ -14,9 +13,10 @@ export class BusinessCard extends Component {
                 <Card
                 className='BusinessCard'
                 hoverable
-                cover={<img src={this.props.url} />}
+                cover={<img style={{'border-radius': '25px'}} src={this.props.url} />}
                 >
-                <Meta className='BusinessCard-Meta' title={this.props.name} description={this.props.tier} />
+                <label className='Business-Card-Name'>{this.props.name}</label>
+                <label className='Business-Card-Tier'>{this.props.tier}</label>
                 </Card>
             </Link>
         )

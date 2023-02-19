@@ -7,7 +7,7 @@ import { Card } from 'antd';
 const { Meta } = Card;
 
   const labelStyle = {
-    scale: '2'
+    
   };
 
 export class CategoryCard extends Component {
@@ -15,9 +15,9 @@ export class CategoryCard extends Component {
         return(
             <Link to={"/explore-" + this.props.category}>
                 <Button className='Category-Tile'>
-                <img src="https://m.media-amazon.com/images/I/51VXgNZFIoL.jpg" width='35%'/>
+                <img className='Category-Thumb' src="https://m.media-amazon.com/images/I/51VXgNZFIoL.jpg" width='35%'/>
                 <br/>
-                <label style={labelStyle}>{this.props.name}</label>
+                <label className='Category-Title'>{this.props.name}</label>
                 </Button>
             </Link>
         )

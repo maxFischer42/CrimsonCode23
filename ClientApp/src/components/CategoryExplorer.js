@@ -4,6 +4,7 @@ import { Button, Input, Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import { BusinessCard } from './BusinessCard';
 import { CategoryCard } from './CategoryCard';
+import { Return } from './Return';
 
 const business = '{"local":[ '+
 '{"name": "name_1", "banner": "https://images.unsplash.com/photo-1603736087997-5daec6092347?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cnViYmVyJTIwZHVja3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "tier": "2"},' +
@@ -46,7 +47,12 @@ export class CategoryExplorer extends Component {
     render() {
         return (
             <div>
-            {this.getCategoryCards()}
+                <Return path={'/explore'}/>
+            
+            <div className='Business-List-Container'>
+                <h1 className='Business-List-Title'>{this.props.category}</h1>
+                {this.getCategoryCards()}
+            </div>
             </div>
         );
     }

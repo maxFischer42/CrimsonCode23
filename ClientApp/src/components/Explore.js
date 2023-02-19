@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Button, Input, Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import { CategoryCard } from './CategoryCard';
+import { Return } from './Return';
 
 
 
@@ -35,6 +36,7 @@ export class Explore extends Component {
   render() {
     return (
       <div>
+        <Return path={'/'}/>
         <Row className='Explorer-Row'>
             {this.getCategoryCards()}
         </Row>
