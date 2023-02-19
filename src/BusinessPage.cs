@@ -14,6 +14,8 @@ public class BusinessPage {
     public String? about_us { get; set; }
     public String? products { get; set; }
     public String? is_claimed { get; set; }
+    public double latitude { get; set; }
+    public double longitude { get; set; }
 	
 	static public BusinessPage FromSqlReader(SqliteDataReader reader) => new BusinessPage {
 		id          = Util.GetOrDefault<int>(reader, "id", -1),
@@ -28,5 +30,7 @@ public class BusinessPage {
 		about_us    = Util.GetOrDefault<String>(reader, "aboutUsText", ""),
 		products    = Util.GetOrDefault<String>(reader, "productsText", ""),
 		is_claimed  = Util.GetOrDefault<String>(reader, "claimed", ""),
+		latitude    = Util.GetOrDefault<double>(reader, "latitude", 0.0),
+		longitude   = Util.GetOrDefault<double>(reader, "longitude", 0.0),
 	};
 }
