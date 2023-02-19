@@ -14,22 +14,26 @@ export class Explore extends Component {
 
   getCategoryCards() {
     let data = [];
-    let name = ["Food", "Hobbies", "Entertainment", "Groceries", "Sports", "Music", "Hair", "Clothing"]
+    let name = ["Food", "Hobbies", "Entertainment", "Groceries", "Sports", "Music", "Hair", "Clothing"];
+    let category = ["food", "hobbies", "entertainment", "groceries", "sports", "music", "hair", "clothing"];
     for(let i = 0; i < name.length; i++) {
-        data[i] = (<CategoryCard name={name[i]}/>);
+        data[i] = (<CategoryCard name={name[i]} category={category[i]}/>);
     }
     return data;
   }
 
-  render() {
-    return (
-      <div>
-        <Link to="/">
+  /*
+          <Link to="/">
           <Button type="primary" ghost='true'>
             Return
           </Button>
         </Link>
-        <Row>
+  */
+
+  render() {
+    return (
+      <div>
+        <Row style={{overflow: 'auto'}}>
             {this.getCategoryCards()}
         </Row>
       </div>

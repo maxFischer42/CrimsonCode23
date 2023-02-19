@@ -7,8 +7,8 @@ const { Meta } = Card;
 
 const gridStyle = {
     textAlign: 'center',
-    margins: '25px',
-    width: '20%',
+    margins: '50px',
+    width: '250px',
     height: '250px'
   };
 
@@ -19,11 +19,13 @@ const gridStyle = {
 export class CategoryCard extends Component {
     render() {
         return(
-            <Button style={gridStyle}>
-            <img src="https://m.media-amazon.com/images/I/51VXgNZFIoL.jpg" width='35%'/>
-            <br/>
-            <label style={labelStyle}>{this.props.name}</label>
-            </Button>
+            <Link to={"/explore-" + this.props.category}>
+                <Button style={gridStyle}>
+                <img src="https://m.media-amazon.com/images/I/51VXgNZFIoL.jpg" width='35%'/>
+                <br/>
+                <label style={labelStyle}>{this.props.name}</label>
+                </Button>
+            </Link>
         )
     }
 }

@@ -6,37 +6,33 @@ import { CategoryCard } from './CategoryCard';
 
 
 
-export class Explore extends Component {
-  static displayName = Explore.name;
+export class CategoryExplorer extends Component {
+  static displayName = CategoryExplorer.name;
   
   constructor (props) {
     super(props);
 
     // Here we will need to call to the server to request all locations with the given tag
+    // For now though, we will use "testingData.js" to get our testing data
+
+
     
   }
 
 
-  getCategoryCards() {
+  /*getCategoryCards() {
     let data = [];
     let name = ["Food", "Hobbies", "Entertainment", "Groceries", "Sports", "Music", "Hair", "Clothing"]
     for(let i = 0; i < name.length; i++) {
         data[i] = (<CategoryCard name={name[i]}/>);
     }
     return data;
-  }
+  }*/
 
   render() {
     return (
       <div>
-        <Link to="/">
-          <Button type="primary" ghost='true'>
-            Return
-          </Button>
-        </Link>
-        <Row>
-            {this.getCategoryCards()}
-        </Row>
+        <label>{this.props.category}</label>
       </div>
     );
   }
