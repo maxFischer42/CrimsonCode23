@@ -1,7 +1,9 @@
+import '../style.css';
 import React, { Component } from 'react';
 import { Button, Input, Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import { CategoryCard } from './CategoryCard';
+
 
 
 
@@ -33,7 +35,7 @@ export class Explore extends Component {
   render() {
     return (
       <div>
-        <Row style={{overflow: 'auto'}}>
+        <Row className='Explorer-Row'>
             {this.getCategoryCards()}
         </Row>
       </div>

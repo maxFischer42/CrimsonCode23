@@ -1,9 +1,4 @@
-const business = '{"local":[ '+
-    '{"name": "name_1"},' +
-    '{"name": "name_2"},' +
-    '{"name": "name_3"}' +
-']}';
+import React, { Component } from 'react';
 
-const getTestData = () => {
-    return business;
-}
+
+export class TestData extends Component { render() {return(<div/>)}}

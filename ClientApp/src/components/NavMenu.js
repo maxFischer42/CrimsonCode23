@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import '../style.css';
+import { Button } from 'antd';
+
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -11,7 +14,7 @@ export class NavMenu extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: false
     };
   }
 
@@ -23,14 +26,15 @@ export class NavMenu extends Component {
 
   render() {
     return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} to="/">CrimsonCode23</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+      <header className='HeaderOptions'>
+        <Navbar container light>
+          <NavbarToggler className="flex-sm-row-reverse" onClick={this.toggleNavbar} className="mr-2" />
+          <Collapse  isOpen={this.state.collapsed} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
+                <Button/>
                 <NavLink tag={Link} className="text-dark" to="/add">Add a Business</NavLink>
+                <NavLink tag={Link} className="text-dark" to="/credit">Credits</NavLink>
               </NavItem>
             </ul>
           </Collapse>

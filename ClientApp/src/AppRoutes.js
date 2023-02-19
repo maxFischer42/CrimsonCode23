@@ -1,8 +1,10 @@
+import './style.css';
 import { Explore } from "./components/Explore";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { BusinessForm } from "./components/BusinessForm";
-import { CategoryExplorer } from "./components/CategoryExplorer"
+import { CategoryExplorer } from "./components/CategoryExplorer";
+import { BusinessPage } from "./components/BusinessPage";
  
 const AppRoutes = [
   {
@@ -53,6 +55,10 @@ const AppRoutes = [
     path: '/explore-hair',
     element: <CategoryExplorer category="hair"/>
   },
+  {
+    path: '/business',
+    element: <BusinessPage />
+  }
 
 ];
 
