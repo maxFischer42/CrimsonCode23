@@ -8,18 +8,22 @@ import { CategoryCard } from './CategoryCard';
 export class Explore extends Component {
   static displayName = Explore.name;
   
+  state = { data: null };
+  
   constructor(props) {
     super(props);
   }
+  
+  componentDidMount() {
+    fetch('api/get_categories')
+      .then(resp => resp.json())
+      .then(data => this.setState({data}));
+  }
 
   getCategoryCards() {
-    let data = [];
-    let name = ["Food", "Hobbies", "Entertainment", "Groceries", "Sports", "Music", "Hair", "Clothing"];
-    let category = ["food", "hobbies", "entertainment", "groceries", "sports", "music", "hair", "clothing"];
-    for(let i = 0; i < name.length; i++) {
-        data[i] = (<CategoryCard name={name[i]} category={category[i]}/>);
-    }
-    return data;
+    return (this.state.data.map(category => {
+        return (<CategoryCard key={category.id} name={category.name} category={category.id}/>);
+    }));
   }
 
   /*
@@ -31,12 +35,17 @@ export class Explore extends Component {
   */
 
   render() {
-    return (
-      <div>
-        <Row style={{overflow: 'auto'}}>
-            {this.getCategoryCards()}
-        </Row>
-      </div>
-    );
+        if(this.state.data === null) { 
+          return (<p>Loading...</p>);
+        }
+        else {
+          return (
+            <div>
+              <Row style={{overflow: 'auto'}}>
+                  {this.getCategoryCards()}
+              </Row>
+            </div>
+          );
+        }
   }
 }
