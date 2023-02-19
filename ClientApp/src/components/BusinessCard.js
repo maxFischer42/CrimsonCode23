@@ -6,7 +6,10 @@ import { Card } from 'antd';
 const { Meta } = Card;
 
 
+
 export class BusinessCard extends Component {
+  
+
     render() {
         return(
             <Link to="/business">
@@ -16,7 +19,7 @@ export class BusinessCard extends Component {
                 cover={<img style={{'border-radius': '25px'}} src={this.props.url} />}
                 >
                 <label className='Business-Card-Name'>{this.props.name}</label>
-                <label className='Business-Card-Tier'>{this.props.tier}</label>
+                {/*<label className='Business-Card-Tier'>{t}</label>*/}
                 </Card>
             </Link>
         )

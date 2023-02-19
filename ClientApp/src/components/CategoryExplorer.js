@@ -18,7 +18,6 @@ const getTestData = () => {
     return business;
 }
 
-
 export class CategoryExplorer extends Component {
   static displayName = CategoryExplorer.name;
   
@@ -50,7 +49,8 @@ export class CategoryExplorer extends Component {
 
   getCards() {
     return (this.state.data.map(business => {
-        return (<BusinessCard key={business.id} name={business.name} id={business.id}/>);
+        console.log(business);
+        return (<BusinessCard key={business.id} name={business.name} id={business.id} tier={business.price_tier} url={business.banner}/>);
     }));
   }
 
