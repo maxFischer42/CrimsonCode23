@@ -15,7 +15,7 @@ export class CategoryCard extends Component {
         return(
             <Link to={"/explore-" + this.props.category}>
                 <Button className='Category-Tile'>
-                <img className='Category-Thumb' src="https://m.media-amazon.com/images/I/51VXgNZFIoL.jpg" width='35%'/>
+                <img className='Category-Thumb' src={this.props.img} width='35%'/>
                 <br/>
                 <label className='Category-Title'>{this.props.name}</label>
                 </Button>

@@ -52,15 +52,15 @@ public class BusinessDB {
 					url  TEXT NULL
 				);
 
-				INSERT INTO Category (categoryId, name) VALUES
-					('food', 'Food'),
-					('music', 'Music'), 
-					('groceries', 'Groceries'),
-					('entertainment', 'Entertainment'),
-					('hair', 'Hair'),
-					('sports', 'Sports'),
-					('hobby', 'Hobby'),
-					('clothing', 'Clothing');
+				INSERT INTO Category (categoryId, name, url) VALUES
+					('food', 'Food', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/food.svg'),
+					('music', 'Music', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/music.svg'), 
+					('groceries', 'Groceries', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/groceries.svg'),
+					('entertainment', 'Entertainment', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/entertainment.svg'),
+					('hair', 'Hair', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/hair.svg'),
+					('sports', 'Sports', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/sport.svg'),
+					('hobby', 'Hobby', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/hobbies.svg'),
+					('clothing', 'Clothing', 'https://raw.githubusercontent.com/maxFischer42/CrimsonCode23/a7ad1c4674c62bdb06477468e88c4f52c2776379/ClientApp/public/clothes.svg');
 			";
 			
 		command.ExecuteReader();
