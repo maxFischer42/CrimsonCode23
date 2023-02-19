@@ -22,38 +22,51 @@ const getTestData = () => {
 export class CategoryExplorer extends Component {
   static displayName = CategoryExplorer.name;
   
-    constructor (props) {
-        super(props);
-    }
+  state = { data: null }
+  
+  constructor (props) {
+    super(props);
+
+    // Here we will need to call to the server to request all locations with the given tag
+    // For now though, we will use "testingData.js" to get our testing data
 
 
-    returnPriceTier(tier){
-        let str = "";
-        for(let i = 0; i < tier; i++) {
-            str = str + "$";
-        }
-        return str;
-    }
+    
+  }
+  componentDidMount() {
+    fetch('api/get_cards_from_category/' + this.props.category)
+      .then(resp => resp.json())
+      .then(data => this.setState({data}));
+  }
 
-    getCategoryCards() {
-        let data = [];
-        let js = JSON.parse(getTestData());
-        for(let i = 0; i < js.local.length; i++) {
-            data[i] = (<BusinessCard name = {js.local[i].name} url={js.local[i].banner} tier={ this.returnPriceTier(js.local[i].tier)}/>)
-        }
-        return data;
+  /*getCategoryCards() {
+    let data = [];
+    let name = ["Food", "Hobbies", "Entertainment", "Groceries", "Sports", "Music", "Hair", "Clothing"]
+    for(let i = 0; i < name.length; i++) {
+        data[i] = (<CategoryCard name={name[i]}/>);
     }
+    return data;
+  }*/
 
-    render() {
-        return (
-            <div>
-                <Return path={'/explore'}/>
-            
-            <div className='Business-List-Container'>
-                <h1 className='Business-List-Title'>{this.props.category}</h1>
-                {this.getCategoryCards()}
-            </div>
-            </div>
-        );
+  getCards() {
+    return (this.state.data.map(business => {
+        return (<BusinessCard key={business.id} name={business.name} id={business.id}/>);
+    }));
+  }
+
+  render() {
+    if(this.state.data === null) { 
+      return (<p>Loading...</p>);
     }
+    else {
+      return (<div>
+         <Return path={'/explore'}/>
+  
+      <div className='Business-List-Container'>
+          <h1 className='Business-List-Title'>{this.props.category}</h1>
+          {this.getCards()}
+      </div>
+      </div>
+    );
+  }
 }

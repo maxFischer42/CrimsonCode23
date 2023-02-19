@@ -67,6 +67,27 @@ public class FeedController : Controller
         }
     }
 
+    [HttpGet("get_cards_from_category/{categoryId}")]
+    public ActionResult<IEnumerable<FeedCard>> GetCardsFromCategory(String categoryId)
+    {
+        try {
+            var command = BusinessDB.Db.CreateCommand();
+            command.CommandText = "SELECT id, name, bannerURL, categoryId, priceTier FROM Business WHERE Business.categoryId = $categoryId;";
+            command.Parameters.AddWithValue("$categoryId", categoryId);
+            
+            var reader = command.ExecuteReader();
+            
+            var list = new List<FeedCard>();
+            while(reader.Read()) {
+                list.Add(FeedCard.FromSqlReader(reader));
+            }
+		
+            return list;
+        } catch (Exception e) {
+            return BadRequest(Json(new { status = "error", error = e.ToString() }));
+        }
+    }
+
     [HttpGet("get_page/{id?}")]
     public ActionResult<IEnumerable<BusinessPage>> GetPage(int id)
     {
