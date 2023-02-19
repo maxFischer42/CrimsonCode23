@@ -25,7 +25,7 @@ export class Explore extends Component {
 
   getCategoryCards() {
     return (this.state.data.map(category => {
-        return (<CategoryCard key={category.id} name={category.name} category={category.id}/>);
+        return (<CategoryCard key={category.id} name={category.name} category={category.id} img={category.url}/>);
     }));
   }
 
