@@ -45,9 +45,9 @@ export class Explore extends Component {
           return (
             <div>
               <Return path={'/'}/>
-        <Row className='Explorer-Row'>
-            {this.getCategoryCards()}
-        </Row>
+              <Row className='Explorer-Row'>
+              {this.getCategoryCards()}
+              </Row>
             </div>
           );
         }

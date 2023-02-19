@@ -70,3 +70,4 @@ export class CategoryExplorer extends Component {
     );
   }
 }
+}
