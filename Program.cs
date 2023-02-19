@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+BusinessDB.Open();
+
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
@@ -17,10 +19,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
+    pattern: "api/{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
 
