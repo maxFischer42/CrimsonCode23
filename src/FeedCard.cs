@@ -13,8 +13,7 @@ public class FeedCard
 	static public FeedCard FromSqlReader(SqliteDataReader reader) => new FeedCard {
 		id          = Util.GetOrDefault<int>(reader, "id", 0),
 		name        = Util.GetOrDefault<String>(reader, "name", ""),
-		banner      = Util.GetOrDefault<String>(reader, "banner", ""),
-		logo        = Util.GetOrDefault<String>(reader, "logo", ""),
+		banner      = Util.GetOrDefault<String>(reader, "bannerURL", ""),
 		categoryId  = Util.GetOrDefault<String>(reader, "categoryId", "")
 	};
 }
